@@ -216,7 +216,7 @@ export default function RegisterPage() {
               label="Full Name"
               name="name"
               type="text"
-              placeholder="Dipesh Solanki"
+              placeholder="Username"
               icon={User}
               autoComplete="name"
               value={form.name}
