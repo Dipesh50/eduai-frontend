@@ -1,0 +1,38 @@
+/* Import Tailwind's base, component, and utility classes */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global base styles */
+@layer base {
+  /* Light mode: white background, dark text */
+  /* Dark mode: near-black background, light text */
+  body {
+    @apply bg-gray-50 dark:bg-gray-950
+           text-gray-900 dark:text-gray-100
+           transition-colors duration-200;
+  }
+
+  /* Smooth scrolling everywhere */
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Remove default input outline, add custom focus ring */
+  input:focus, textarea:focus {
+    outline: none;
+  }
+}
+
+/* Custom scrollbar for chat page */
+@layer utilities {
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 4px;
+  }
+  .scrollbar-thin::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full;
+  }
+}
