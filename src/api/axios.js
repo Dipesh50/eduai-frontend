@@ -2,7 +2,7 @@ import axios from 'axios'
 
 // Create axios instance with backend base URL
 const api = axios.create({
-  baseURL: 'http://localhost:8080',  // your Spring Boot server
+  baseURL: 'https://eduai-backend-production-e30f.up.railway.app',  // your Spring Boot server
   headers: {
     'Content-Type': 'application/json'
   }
