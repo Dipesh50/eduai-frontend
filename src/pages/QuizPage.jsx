@@ -571,7 +571,7 @@ const ResultScreen = ({ result, topic, onRetry, onBack }) => {
                 {/* Question row */}
                 <div className="flex items-start gap-3 p-4">
                   {/* Correct/wrong icon */}
-                  {item.isCorrect
+                  {item.yourAnswer === item.correctAnswer
                     ? <CheckCircle2 className="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" />
                     : <XCircle className="w-5 h-5 text-red-500 flex-shrink-0 mt-0.5" />
                   }
@@ -586,13 +586,13 @@ const ResultScreen = ({ result, topic, onRetry, onBack }) => {
                     <div className="flex flex-wrap gap-3
                       text-xs">
                       <span className={`flex items-center gap-1
-                        ${item.isCorrect
+                        ${item.yourAnswer === item.correctAnswer
                           ? 'text-green-600 dark:text-green-400'
                           : 'text-red-500 dark:text-red-400'
                         }`}>
                         Your answer: <b>{item.yourAnswer}</b>
                       </span>
-                      {!item.isCorrect && (
+                     {item.yourAnswer !== item.correctAnswer && (
                         <span className="flex items-center gap-1
                           text-green-600 dark:text-green-400">
                           Correct: <b>{item.correctAnswer}</b>
