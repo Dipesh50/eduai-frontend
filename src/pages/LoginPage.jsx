@@ -275,8 +275,8 @@ export default function LoginPage() {
           </p>
           <div className="flex justify-center gap-6 text-xs
             text-gray-600 dark:text-gray-300 font-mono">
-            <span>📧 rahul@test.com</span>
-            <span>🔑 rahul123</span>
+            <span>📧 user@gmail.com</span>
+            <span>🔑 uer123</span>
           </div>
         </div>
 
