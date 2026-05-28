@@ -251,14 +251,23 @@ const QuizTakingScreen = ({
 
   // ── THE FIX: normalize to uppercase ───────────────
   const handleSelect = (option) => {
-    if (isAnswered) return
-    const normalized = option.toUpperCase().trim()
-    setAnswers(prev => ({
-      ...prev,
-      [currentQ.id]: normalized
-    }))
-    setShowResult(true)
-  }
+  if (isAnswered) return
+
+  // DEBUG — see exact values in browser console
+  console.log('=== QUIZ DEBUG ===')
+  console.log('You clicked:', option)
+  console.log('correctAnswer from backend:', currentQ.correctAnswer)
+  console.log('correctAnswer type:', typeof currentQ.correctAnswer)
+  console.log('Full question object:', currentQ)
+  console.log('==================')
+
+  const normalized = option.toUpperCase().trim()
+  setAnswers(prev => ({
+    ...prev,
+    [currentQ.id]: normalized
+  }))
+  setShowResult(true)
+}
 
   const handleNext = () => {
     if (isLastQ) {
